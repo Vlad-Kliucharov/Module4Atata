@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Atata;
+using NUnit.Framework;
 
 namespace Module4Atata
 {
-    public class BasePage
+    public class BasePage : BaseTest
     {
+        [Test]
+        public void MainPageYesk()
+        {
+            Go.ToUrl("http://www.yesk.com.ua/");
+        }
     }
 }
