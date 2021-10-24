@@ -1,5 +1,6 @@
 ﻿using Atata;
 using NUnit.Framework;
+using System.Configuration;
 
 namespace Module4Atata
 {
@@ -10,15 +11,15 @@ namespace Module4Atata
         {
             AtataContext.Configure()
             .UseChrome()
-          //.WithArguments("start-maximized")
+            .WithArguments("start-maximized")
+            .UseBaseUrl(ConfigurationManager.AppSettings["MainPage"])
             .Build();
-            AtataContext.Current.Driver.Manage().Window.Maximize();
-
+            
         }
-        //[TearDown]
-        //public void TearDown()
-        //{
-        //    AtataContext.Current.CleanUp();
-        //}
+        [TearDown]
+        public void TearDown()
+        {
+            AtataContext.Current.CleanUp();
+        }
     }
 }

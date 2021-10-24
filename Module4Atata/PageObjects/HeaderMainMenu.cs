@@ -10,6 +10,6 @@ namespace Module4Atata
         public Control<_> MenuAllArticles { get; private set; }
 
         [FindById("menu-item-470")]
-        public Control<_> WebDriverCourse { get; private set; }
+        public Control<_> SubMenuWebDriverCourse { get; private set; }
     }
 }
