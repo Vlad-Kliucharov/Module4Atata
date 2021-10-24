@@ -3,15 +3,16 @@ using NUnit.Framework;
 
 namespace Module4Atata
 {
-    public abstract class BaseTest
+    public abstract class ConfigTest
     {
         [SetUp]
         public void SetUp()
         {
             AtataContext.Configure()
-                .UseChrome()
-                .WithArguments("start-maximized")
-                .Build();
+            .UseChrome()
+          //.WithArguments("start-maximized")
+            .Build();
+            AtataContext.Current.Driver.Manage().Window.Maximize();
 
         }
         //[TearDown]
