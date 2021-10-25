@@ -1,14 +1,23 @@
 ﻿using Atata;
-using OpenQA.Selenium.Support.UI;
+using System.Threading;
+
+
 
 namespace Module4Atata.PageMapping
 {
     using _ = ControlsPage;
 
+
     public class ControlsPage : Page<_>
     {
         [FindByClass("elementor-counter-number")]
-        [WaitFor(Until.Visible)]
-        public Control<_> WaitProgressLoading { get; private set; }
+        public Control<_> ProgressLoading { get; private set; }
+
+        public _ WaitProgressBarLoading()
+        {
+            Thread.Sleep(1000);
+            ProgressLoading.Content.Should.Equal("100");
+            return Go.To<_>();
+        }
     }
 }

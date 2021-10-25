@@ -14,7 +14,7 @@ namespace Module4Atata
             SubMenuWebDriverCourse.ClickAndGo<WebDriverCoursePage>().
             ArticlesSearchElements.ClickAndGo<SearchElementsPage>().
             LinkControlPage.ClickAndGo<ControlsPage>().
-            WaitProgressLoading.WaitTo.Equals("100");
+            WaitProgressBarLoading();
         }
     }
 }
