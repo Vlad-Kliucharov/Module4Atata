@@ -14,7 +14,7 @@ namespace Module4Atata
             .Menu.SubMenuWebDriverCourse.ClickAndGo<WebDriverCoursePage>()
             .ArticlesSearchElements.ClickAndGo<SearchElementsPage>()
             .LinkControlPage.ClickAndGo<ControlsPage>()
-            .WaitProgressBarLoading();
+            .WaitProgressBarLoading().ITProjects.Rows[x => x.Name == "FaceBook"].Budget.Should.Equal(decimal.MaxValue).ToString();
         }
     }
 }
