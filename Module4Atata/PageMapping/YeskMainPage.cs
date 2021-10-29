@@ -1,10 +1,11 @@
 ﻿using Atata;
-using NUnit.Framework;
+
 
 namespace Module4Atata.PageMapping
 {
-    public class YeskMainPage : ConfigTest
+    using _ = YeskMainPage;
+    public class YeskMainPage : Page<_>
     {
-
+        public HeaderMainMenu<_> Menu { get; private set; }
     }
 }

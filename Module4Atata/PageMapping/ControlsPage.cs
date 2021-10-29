@@ -1,12 +1,9 @@
 ﻿using Atata;
 using System.Threading;
 
-
-
 namespace Module4Atata.PageMapping
 {
     using _ = ControlsPage;
-
 
     public class ControlsPage : Page<_>
     {

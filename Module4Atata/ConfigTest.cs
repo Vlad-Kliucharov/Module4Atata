@@ -1,4 +1,5 @@
 ﻿using Atata;
+using Module4Atata.PageMapping;
 using NUnit.Framework;
 using System.Configuration;
 
@@ -12,14 +13,13 @@ namespace Module4Atata
             AtataContext.Configure()
             .UseChrome()
             .WithArguments("start-maximized")
-            .UseBaseUrl(ConfigurationManager.AppSettings["MainPage"])
             .Build();
-            
         }
         [TearDown]
         public void TearDown()
         {
             AtataContext.Current.CleanUp();
         }
+        public YeskMainPage OpenMainPage() => Go.To<YeskMainPage>(url: ConfigurationManager.AppSettings["MainPage"]);
     }
 }
