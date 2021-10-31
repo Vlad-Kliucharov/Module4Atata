@@ -1,6 +1,5 @@
 ﻿using Atata;
 
-
 namespace Module4Atata.PageMapping
 {
     using _ = YeskMainPage;

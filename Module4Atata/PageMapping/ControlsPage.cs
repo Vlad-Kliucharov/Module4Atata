@@ -1,4 +1,5 @@
 ﻿using Atata;
+using System;
 using System.Threading;
 
 namespace Module4Atata.PageMapping
@@ -17,15 +18,16 @@ namespace Module4Atata.PageMapping
             return Go.To<_>();
         }
 
-        [FindByXPath("//th[text()='Name']//following::tr")]
         public Table<ITTableRows, _> ITProjects { get; private set; }
-
         public class ITTableRows : TableRow<_>
         {
-            [FindByXPath("//td[1]")]
+            //[FindByColumnHeader("Name")]
+            [FindByColumnIndex(0)]
             public Text<_> Name { get; private set; }
-            [FindByXPath("//td[2]")]
+            //[FindByColumnHeader("Budget ($)")]
+            [FindByColumnIndex(1)]
             public Number<_> Budget { get; private set; }
+            public int budgetNumber => Convert.ToInt32(Budget);
         }
     }
 }

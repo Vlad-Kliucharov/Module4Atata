@@ -10,6 +10,5 @@ namespace Module4Atata
 
         [FindById("menu-item-470")]
         public Control<TOwner> SubMenuWebDriverCourse { get; private set; }
-
     }
 }
