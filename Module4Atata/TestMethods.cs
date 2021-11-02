@@ -12,10 +12,10 @@ namespace Module4Atata
             OpenMainPage()
             .Menu.MenuAllArticles.Hover()
             .Menu.SubMenuWebDriverCourse.ClickAndGo<WebDriverCoursePage>()
-            .ArticlesSearchElements.ClickAndGo<SearchElementsPage>()
+            .ArticlesSearchElements.ClickAndGo()
             .LinkControlPage.ClickAndGo<ControlsPage>()
             .WaitProgressBarLoading()
-            .ITProjects.Rows[x => x.Name == "Facebook"].Budget.Should.Equal(int.MaxValue).ToString();
+            .ITProjects.Rows[x => x.Name == "Facebook"].Budget.Should.Equal(12300);
         }
     }
 }

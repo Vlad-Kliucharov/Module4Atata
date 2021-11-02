@@ -6,7 +6,7 @@ namespace Module4Atata.PageMapping
 {
     using _ = ControlsPage;
 
-    public class ControlsPage : Page<_>
+    public class ControlsPage : BasePage<_>
     {
         [FindByClass("elementor-counter-number")]
         public Control<_> ProgressLoading { get; private set; }
@@ -18,16 +18,16 @@ namespace Module4Atata.PageMapping
             return Go.To<_>();
         }
 
+        [FindByXPath("//th[text()='Budget $']//ancestor::table[1]")]
         public Table<ITTableRows, _> ITProjects { get; private set; }
+
         public class ITTableRows : TableRow<_>
         {
-            //[FindByColumnHeader("Name")]
-            [FindByColumnIndex(0)]
+            [FindByColumnHeader("Name")]
             public Text<_> Name { get; private set; }
-            //[FindByColumnHeader("Budget ($)")]
+
             [FindByColumnIndex(1)]
             public Number<_> Budget { get; private set; }
-            public int budgetNumber => Convert.ToInt32(Budget);
         }
     }
 }

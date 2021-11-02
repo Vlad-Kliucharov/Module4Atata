@@ -3,8 +3,7 @@
 namespace Module4Atata.PageMapping
 {
     using _ = YeskMainPage;
-    public class YeskMainPage : Page<_>
+    public class YeskMainPage : BasePage<_>
     {
-        public HeaderMainMenu<_> Menu { get; private set; }
     }
 }

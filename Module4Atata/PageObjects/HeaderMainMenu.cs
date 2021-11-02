@@ -2,6 +2,7 @@
 
 namespace Module4Atata
 {
+    [FindByClass("item--inner builder-item--primary-menu has_menu")]
     public class HeaderMainMenu<TOwner> : Control<TOwner>
     where TOwner : PageObject<TOwner>
     {
